@@ -1,26 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "outDir": "./dist/",
+    "target": "es6",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "pretty": true, // 에러랑 메세지를 이쁘게 표현함.
+    "module": "ESNext", // 모듈 코드 생성시에 어떤 버전으로 생성할지
+    "moduleResolution": "Node", // 모듈 코드 해석시에 어떤 버전으로 해석할지
+    "noFallthroughCasesInSwitch": true, // switch case문이 잘못됐을때 경고
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true, // 파일 참조시 대소문자 구분 철저히
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "strict": true, // 아래 모든 typechecking 요소를 활성화 함.
+    "noImplicitAny": true,                      // any타입이 될거 같으면 error
+    /*
+      "noImplicitThis": true,                     // this 쓸 때, 요소가 any타입이면 error
+      "alwaysStrict": true,                       // 컴파일 시에 모든 파일에 'use strict'포함.
+      "strictBindCallApply": true,                // bind, call, apply 메소드를 엄격하게 검사
+      "strictNullChecks": true,                   // null, undefined는 any혹은 각각을 표기한 곳에서만 허용, 포함되있던 일반적 경우에 대해 모두 제거
+      "strictFunctionTypes": true,                // 서브타입은 파라미터로 받지 않음.
+      "strictPropertyInitialization": true,       // 초기화 되지 않은 class 변수는 constructor에서 초기화를 보장(타입 + 초기값)
+    */
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "fonts"]
 }
