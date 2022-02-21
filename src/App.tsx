@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Container, createTheme, ThemeProvider } from '@mui/material';
-import Header from './component/Header';
+import Header from './component/Header/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/Home/Home';
-import Board from './page/Board';
+import Board from './page/Board/Board';
 import GlobalStyle from 'component/style/GlobalStyle';
 
 function App() {

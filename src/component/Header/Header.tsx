@@ -1,14 +1,17 @@
 import React from 'react';
-import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Grid, styled, Toolbar, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const pages = [{ title: '게시판', uri: '/board' }];
 
+const BoardToolBar = styled(Toolbar)({
+  backgroundColor: '#002171',
+});
 const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <BoardToolBar>
           <Grid container spacing={2} alignItems={'center'}>
             <Grid item>
               <NavLink to={'/'}>
@@ -33,7 +36,7 @@ const Header = () => {
               );
             })}
           </Grid>
-        </Toolbar>
+        </BoardToolBar>
       </AppBar>
     </Box>
   );
