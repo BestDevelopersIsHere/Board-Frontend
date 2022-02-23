@@ -1,13 +1,16 @@
 import React from 'react';
 import { AppBar, Box, Grid, styled, Toolbar, Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const pages = [{ title: '게시판', uri: '/board' }];
 
 const BoardToolBar = styled(Toolbar)({
   backgroundColor: '#002171',
 });
+
 const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -24,13 +27,23 @@ const Header = () => {
               return (
                 <Grid item key={idx}>
                   <NavLink to={uri}>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{ flexGrow: 1, color: 'white' }}
-                    >
-                      {title}
-                    </Typography>
+                    {pathname === uri ? (
+                      <Typography
+                        variant="subtitle1"
+                        component="div"
+                        sx={{ flexGrow: 1, color: 'white', fontWeight: 'bold' }}
+                      >
+                        {title}
+                      </Typography>
+                    ) : (
+                      <Typography
+                        variant="subtitle2"
+                        component="div"
+                        sx={{ flexGrow: 1, color: 'white' }}
+                      >
+                        {title}
+                      </Typography>
+                    )}
                   </NavLink>
                 </Grid>
               );
