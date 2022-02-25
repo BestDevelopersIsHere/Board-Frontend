@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback } from 'react';
 import {
   styled,
   Table,
@@ -8,64 +8,8 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-
-interface IBoardSimple {
-  id: number;
-  writer: string;
-  title: string;
-  createdDate: string;
-}
-
-const BoardData: IBoardSimple[] = [
-  {
-    id: 1,
-    writer: 'jaehee',
-    title: 'title1',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 2,
-    writer: 'jaehee2',
-    title: 'title2',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 3,
-    writer: 'jaehee3',
-    title: 'title3',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 4,
-    writer: 'jaehee4',
-    title: 'title4',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 5,
-    writer: 'jaehee5',
-    title: 'title5',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 6,
-    writer: 'jaehee6',
-    title: 'title6',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 7,
-    writer: 'jaehee7',
-    title: 'title17',
-    createdDate: new Date().toDateString(),
-  },
-  {
-    id: 8,
-    writer: 'jaehee8',
-    title: 'title18',
-    createdDate: new Date().toDateString(),
-  },
-];
+import { IBoardList } from './BoardTypes';
+import { useNavigate } from 'react-router-dom';
 
 const BoardTableHead = styled(TableHead)({
   backgroundColor: '#0d47a1',
@@ -76,8 +20,21 @@ const BoardTableCell = styled(TableCell)({
   color: 'white',
 });
 
-const BoardList = () => {
-  const [boardList, setBoardList] = useState<IBoardSimple[]>(BoardData);
+const BoardTableRow = styled(TableRow)({
+  '$:hover': {
+    backgroundColor: 'red',
+  },
+});
+
+const BoardList = ({ boardList }: IBoardList) => {
+  const navigate = useNavigate();
+
+  const handleClickTableDetail = useCallback(
+    (id: number) => {
+      navigate(`/board/${id}`);
+    },
+    [navigate],
+  );
 
   return (
     <TableContainer>
@@ -101,7 +58,7 @@ const BoardList = () => {
         <TableBody>
           {boardList.map((board) => {
             return (
-              <TableRow key={board.id}>
+              <BoardTableRow key={board.id} onClick={() => handleClickTableDetail(board.id)}>
                 <TableCell align={'center'} width={'10%'}>
                   {board.id}
                 </TableCell>
@@ -114,7 +71,7 @@ const BoardList = () => {
                 <TableCell align={'center'} width={'30%'}>
                   {board.createdDate}
                 </TableCell>
-              </TableRow>
+              </BoardTableRow>
             );
           })}
         </TableBody>
