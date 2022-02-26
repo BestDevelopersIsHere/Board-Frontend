@@ -4,9 +4,9 @@ import BoardList from './BoardList';
 import { NormalButton } from '../../component/Button';
 import SearchCard from './SearchCard';
 import { useNavigate } from 'react-router-dom';
-import { IBoard } from './BoardTypes';
+import { IBoardSimple } from './BoardTypes';
 
-const BoardData: IBoard[] = [
+const BoardData: IBoardSimple[] = [
   {
     id: 1,
     writer: 'jaehee',
@@ -65,7 +65,7 @@ const BigCircularProgress = styled(CircularProgress)({
 const Board = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
-  const [boardList, setBoardList] = useState<IBoard[]>([]);
+  const [boardList, setBoardList] = useState<IBoardSimple[]>([]);
 
   useEffect(() => {
     setLoading(true);

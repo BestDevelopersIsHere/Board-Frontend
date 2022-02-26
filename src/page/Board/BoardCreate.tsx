@@ -5,9 +5,9 @@ import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-const Label = styled(Box)({ textAlign: 'center' });
+export const Label = styled(Box)({ textAlign: 'center' });
 
-const Container = styled(Grid)({
+export const Container = styled(Grid)({
   justifyContent: 'center',
   alignItems: 'center',
   marginTop: '10vh',
@@ -16,12 +16,12 @@ const Container = styled(Grid)({
   height: '80%',
 });
 
-const Row = styled(Grid)({
+export const Row = styled(Grid)({
   justifyContent: 'center',
   alignItems: 'center',
 });
 
-const LabelGrid = ({ children }: any) => (
+export const LabelGrid = ({ children }: any) => (
   <Grid item xs={2}>
     <Label>{children}</Label>
   </Grid>

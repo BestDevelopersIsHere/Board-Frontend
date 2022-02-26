@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Container, createTheme, ThemeProvider } from '@mui/material';
+import { Container, createTheme, Grid, ThemeProvider } from '@mui/material';
 import Header from './component/Header/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/Home/Home';
 import Board from './page/Board/Board';
 import GlobalStyle from 'component/style/GlobalStyle';
 import BoardCreate from './page/Board/BoardCreate';
+import BoardDetail from './page/Board/BoardDetail';
 
 function App() {
   const theme = createTheme();
@@ -16,11 +17,14 @@ function App() {
         <BrowserRouter>
           <GlobalStyle />
           <Header />
-          <Routes>
-            <Route path={'/'} element={<Home />} />
-            <Route path={'/board'} element={<Board />} />
-            <Route path={'/board/create'} element={<BoardCreate />} />
-          </Routes>
+          <Grid container justifyContent={'center'}>
+            <Routes>
+              <Route path={'/'} element={<Home />} />
+              <Route path={'/board'} element={<Board />} />
+              <Route path={'/board/create'} element={<BoardCreate />} />
+              <Route path={'/board/:id'} element={<BoardDetail />} />
+            </Routes>
+          </Grid>
         </BrowserRouter>
       </Container>
     </ThemeProvider>

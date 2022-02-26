@@ -1,10 +1,14 @@
 export interface IBoardList {
-  boardList: IBoard[];
+  boardList: IBoardSimple[];
 }
 
-export interface IBoard {
+export interface IBoardSimple {
   id: number;
   writer: string;
   title: string;
   createdDate: string;
+}
+
+export interface IBoardDetail extends IBoardSimple {
+  content: string;
 }
