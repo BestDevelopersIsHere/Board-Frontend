@@ -8,6 +8,7 @@ import Board from './page/Board/Board';
 import GlobalStyle from 'component/style/GlobalStyle';
 import BoardCreate from './page/Board/BoardCreate';
 import BoardDetail from './page/Board/BoardDetail';
+import BoardUpdate from './page/Board/BoardUpdate';
 
 function App() {
   const theme = createTheme();
@@ -23,6 +24,7 @@ function App() {
               <Route path={'/board'} element={<Board />} />
               <Route path={'/board/create'} element={<BoardCreate />} />
               <Route path={'/board/:id'} element={<BoardDetail />} />
+              <Route path={'/board/:id/update'} element={<BoardUpdate />} />
             </Routes>
           </Grid>
         </BrowserRouter>

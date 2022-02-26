@@ -12,3 +12,9 @@ export interface IBoardSimple {
 export interface IBoardDetail extends IBoardSimple {
   content: string;
 }
+
+export interface IBoardForUpdate {
+  id: number;
+  title: string;
+  content: string;
+}

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { CircularProgress, Grid, styled } from '@mui/material';
+import { Box, CircularProgress, Grid, Paper, styled } from '@mui/material';
 import BoardList from './BoardList';
 import { NormalButton } from '../../component/Button';
 import SearchCard from './SearchCard';
@@ -61,6 +61,24 @@ const BigCircularProgress = styled(CircularProgress)({
   marginTop: '20%',
   marginLeft: '40%',
 });
+
+export const BoardPaper = styled(Paper)(
+  () => `
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 10% 0 2vh;
+`,
+);
+
+export const BoardBox = styled(Box)(
+  () => `
+  width: 95%;
+  margin: 2vh 0 2vh;
+`,
+);
+
+export const Label = styled(Box)({ textAlign: 'center' });
 
 const Board = () => {
   const navigate = useNavigate();
