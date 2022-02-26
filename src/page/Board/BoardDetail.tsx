@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Button, Divider, Grid, Paper, styled, Typography } from '@mui/material';
 import { IBoardDetail } from './BoardTypes';
 
@@ -20,7 +20,12 @@ const BoardBox = styled(Box)(
 
 const BoardDetail = () => {
   const param = useParams();
+  const navigate = useNavigate();
   const [board, setBoard] = useState<IBoardDetail>({} as IBoardDetail);
+
+  const handleClickBack = useCallback(() => {
+    navigate('/board');
+  }, [navigate]);
 
   useEffect(() => {
     setBoard({
@@ -87,7 +92,9 @@ const BoardDetail = () => {
       </BoardPaper>
       <Grid container justifyContent={'center'} sx={{ paddingTop: '1vh' }}>
         <Grid item>
-          <Button variant={'contained'}>뒤로가기</Button>
+          <Button variant={'contained'} onClick={handleClickBack}>
+            뒤로가기
+          </Button>
         </Grid>
       </Grid>
     </>
