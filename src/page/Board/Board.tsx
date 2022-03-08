@@ -4,7 +4,7 @@ import BoardList from './BoardList';
 import { NormalButton } from '../../component/Button';
 import SearchCard from './SearchCard';
 import { useNavigate } from 'react-router-dom';
-import { IBoardSimple } from './BoardTypes';
+import { BoardType, IBoardSimple } from './BoardTypes';
 
 const BoardData: IBoardSimple[] = [
   {
@@ -12,48 +12,56 @@ const BoardData: IBoardSimple[] = [
     writer: 'jaehee',
     title: 'title1',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NOTICE,
   },
   {
     id: 2,
     writer: 'jaehee2',
     title: 'title2',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NOTICE,
   },
   {
     id: 3,
     writer: 'jaehee3',
     title: 'title3',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NOTICE,
   },
   {
     id: 4,
     writer: 'jaehee4',
     title: 'title4',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NOTICE,
   },
   {
     id: 5,
     writer: 'jaehee5',
     title: 'title5',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NORMAL,
   },
   {
     id: 6,
     writer: 'jaehee6',
     title: 'title6',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NORMAL,
   },
   {
     id: 7,
     writer: 'jaehee7',
     title: 'title17',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NORMAL,
   },
   {
     id: 8,
     writer: 'jaehee8',
     title: 'title18',
     createdDate: new Date().toDateString(),
+    boardType: BoardType.NORMAL,
   },
 ];
 

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Button, CircularProgress, Divider, Grid, Typography } from '@mui/material';
-import { IBoardDetail } from './BoardTypes';
+import { BoardType, IBoardDetail } from './BoardTypes';
 import { BoardBox, BoardPaper } from './Board';
 
 const BoardDetail = () => {
@@ -37,6 +37,7 @@ const BoardDetail = () => {
         '내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1' +
         '',
       createdDate: '2020-02-10 10:00:00',
+      boardType: BoardType.NOTICE,
     });
     setLoading(false);
   }, [param]);

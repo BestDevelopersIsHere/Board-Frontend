@@ -8,7 +8,7 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import { IBoardList } from './BoardTypes';
+import { boardTypeDict, IBoardList } from './BoardTypes';
 import { useNavigate } from 'react-router-dom';
 
 const BoardTableHead = styled(TableHead)({
@@ -44,6 +44,9 @@ const BoardList = ({ boardList }: IBoardList) => {
             <BoardTableCell align={'center'} width={'10%'}>
               id
             </BoardTableCell>
+            <BoardTableCell align={'center'} width={'10%'}>
+              타입
+            </BoardTableCell>
             <BoardTableCell align={'center'} width={'20%'}>
               작성자
             </BoardTableCell>
@@ -62,6 +65,10 @@ const BoardList = ({ boardList }: IBoardList) => {
                 <TableCell align={'center'} width={'10%'}>
                   {board.id}
                 </TableCell>
+                <TableCell align={'center'} width={'10%'}>
+                  {boardTypeDict[board.boardType]}
+                </TableCell>
+
                 <TableCell align={'center'} width={'20%'}>
                   {board.writer}
                 </TableCell>
