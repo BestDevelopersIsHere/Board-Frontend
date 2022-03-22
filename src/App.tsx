@@ -4,7 +4,7 @@ import { Container, createTheme, Grid, ThemeProvider } from '@mui/material';
 import Header from './component/Header/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/Home/Home';
-import Board from './page/Board/Board';
+import Board from './page/Board/BoardList';
 import GlobalStyle from 'component/style/GlobalStyle';
 import BoardCreate from './page/Board/BoardCreate';
 import BoardDetail from './page/Board/BoardDetail';

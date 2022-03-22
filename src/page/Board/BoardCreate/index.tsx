@@ -4,7 +4,8 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { BoardBox, BoardPaper, Label } from './Board';
+import { BoardBox, BoardPaper, Label } from '../BoardList';
+import { createPost } from '../../../api';
 
 interface IBoardCreateForm {
   title: string;
@@ -27,8 +28,9 @@ const BoardCreate = () => {
   const handleClickAdd = useCallback(
     (form: IBoardCreateForm) => {
       setLoading(true);
-      console.info(form);
-      navigate('/board');
+      createPost({ ...form, writer: '작성자' }).then(() => {
+        navigate(`/board/`);
+      });
     },
     [navigate],
   );

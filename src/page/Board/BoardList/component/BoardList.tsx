@@ -8,8 +8,9 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import { boardTypeDict, IBoardList } from './BoardTypes';
+import { IBoardList } from '../../BoardTypes';
 import { useNavigate } from 'react-router-dom';
+import { datetimeFormat } from '../../../../component/util';
 
 const BoardTableHead = styled(TableHead)({
   backgroundColor: '#0d47a1',
@@ -44,9 +45,6 @@ const BoardList = ({ boardList }: IBoardList) => {
             <BoardTableCell align={'center'} width={'10%'}>
               id
             </BoardTableCell>
-            <BoardTableCell align={'center'} width={'10%'}>
-              타입
-            </BoardTableCell>
             <BoardTableCell align={'center'} width={'20%'}>
               작성자
             </BoardTableCell>
@@ -65,10 +63,6 @@ const BoardList = ({ boardList }: IBoardList) => {
                 <TableCell align={'center'} width={'10%'}>
                   {board.id}
                 </TableCell>
-                <TableCell align={'center'} width={'10%'}>
-                  {boardTypeDict[board.boardType]}
-                </TableCell>
-
                 <TableCell align={'center'} width={'20%'}>
                   {board.writer}
                 </TableCell>
@@ -76,7 +70,7 @@ const BoardList = ({ boardList }: IBoardList) => {
                   {board.title}
                 </TableCell>
                 <TableCell align={'center'} width={'30%'}>
-                  {board.createdDate}
+                  {datetimeFormat(board.createdDate)}
                 </TableCell>
               </BoardTableRow>
             );
