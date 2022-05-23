@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# 게시판 데모
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React, TypeScript 를 활용한 데모 게시판
 
 ## Available Scripts
 
