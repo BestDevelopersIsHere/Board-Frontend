@@ -9,6 +9,7 @@ import GlobalStyle from 'component/style/GlobalStyle';
 import BoardCreate from './page/Board/BoardCreate';
 import BoardDetail from './page/Board/BoardDetail';
 import BoardUpdate from './page/Board/BoardUpdate';
+import OAuth2RedirectHandler from './page/Login/Redirect';
 
 function App() {
   const theme = createTheme();
@@ -25,6 +26,7 @@ function App() {
               <Route path={'/board/create'} element={<BoardCreate />} />
               <Route path={'/board/:id'} element={<BoardDetail />} />
               <Route path={'/board/:id/update'} element={<BoardUpdate />} />
+              <Route path={'/oauth2/redirect'} element={<OAuth2RedirectHandler />} />
             </Routes>
           </Grid>
         </BrowserRouter>

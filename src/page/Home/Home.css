@@ -6,7 +6,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .main-title {
-        animation: main-title-spin infinite 2s linear;
+        animation: blink-effect infinite 2s linear;
     }
 }
 
@@ -16,5 +16,11 @@
     }
     to {
         transform: scale(0) rotate(360deg);
+    }
+}
+
+@keyframes blink-effect {
+    50%{
+        opacity: 0;
     }
 }
