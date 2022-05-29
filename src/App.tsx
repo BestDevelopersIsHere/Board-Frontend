@@ -10,6 +10,7 @@ import BoardCreate from './page/Board/BoardCreate';
 import BoardDetail from './page/Board/BoardDetail';
 import BoardUpdate from './page/Board/BoardUpdate';
 import OAuth2RedirectHandler from './page/Login/Redirect';
+import Login from './page/Login/Home/Login';
 
 function App() {
   const theme = createTheme();
@@ -22,6 +23,7 @@ function App() {
           <Grid container justifyContent={'center'}>
             <Routes>
               <Route path={'/'} element={<Home />} />
+              <Route path={'/login'} element={<Login />} />
               <Route path={'/board'} element={<Board />} />
               <Route path={'/board/create'} element={<BoardCreate />} />
               <Route path={'/board/:id'} element={<BoardDetail />} />

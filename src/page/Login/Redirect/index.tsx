@@ -23,7 +23,7 @@ const OAuth2RedirectHandler = () => {
       //   localStorage.setItem(REFRESH_NAME, refresh);
 
       console.log(token);
-      navigate('/');
+      // navigate('/');
     } else {
       console.log(error);
     }
